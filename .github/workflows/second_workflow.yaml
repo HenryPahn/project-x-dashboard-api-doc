@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Confirm trigger
         run: |
-          echo "✅ Triggered by First Workflow!"
+          echo "✅ Triggered by First Workflows!"
           echo "Workflow name: ${{ github.event.workflow_run.name }}"
           echo "Branch: ${{ github.event.workflow_run.head_branch }}"
           echo "Status: ${{ github.event.workflow_run.status }}"
