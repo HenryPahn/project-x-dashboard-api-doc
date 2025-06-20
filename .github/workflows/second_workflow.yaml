@@ -1,0 +1,24 @@
+# .github/workflows/second-workflow.yml
+name: Second Workflow (Triggered by First)
+
+on:
+  workflow_run:
+    workflows:
+      - First Workflow
+    types:
+      - completed
+    branches:
+      - develop
+
+jobs:
+  triggered-job:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success'
+    steps:
+      - name: Confirm trigger
+        run: |
+          echo "✅ Triggered by First Workflow!"
+          echo "Workflow name: ${{ github.event.workflow_run.name }}"
+          echo "Branch: ${{ github.event.workflow_run.head_branch }}"
+          echo "Status: ${{ github.event.workflow_run.status }}"
+          echo "Conclusion: ${{ github.event.workflow_run.conclusion }}"
