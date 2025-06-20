@@ -3,8 +3,7 @@ name: Second Workflow (Triggered by First)
 
 on:
   workflow_run:
-    workflows:
-      - First Workflow
+    workflows: [First Workflow]
     types:
       - completed
 
