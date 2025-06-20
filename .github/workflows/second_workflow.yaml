@@ -7,8 +7,6 @@ on:
       - First Workflow
     types:
       - completed
-    branches:
-      - develop
 
 jobs:
   triggered-job:
