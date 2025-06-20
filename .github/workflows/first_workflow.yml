@@ -1,0 +1,14 @@
+# .github/workflows/first-workflow.yml
+name: First Workflow
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "👋 Hello from the First Workflow!"
